@@ -49,7 +49,7 @@
             boxConnect.Name = "boxConnect";
             boxConnect.Size = new Size(536, 23);
             boxConnect.TabIndex = 1;
-            boxConnect.Text = "Host=localhost;Port=5432;Username=postgres;Password=1;Database=filesdb";
+            boxConnect.Text = "Host=localhost;Port=5432;Username=postgres;Password=1;Database=filesdb \\ пример";
             // 
             // button1
             // 
@@ -74,6 +74,7 @@
             MinimizeBox = false;
             Name = "AuthDb";
             Text = "AuthDb";
+            Load += AuthDb_Load;
             ResumeLayout(false);
             PerformLayout();
         }

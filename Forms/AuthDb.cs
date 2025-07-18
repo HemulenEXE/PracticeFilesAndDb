@@ -18,6 +18,7 @@ namespace PracticeFilesAndDB.Forms
         public AuthDb()
         {
             InitializeComponent();
+            boxConnect.Text = ConnectionSettingsManager.GetStringConnect();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,7 +28,7 @@ namespace PracticeFilesAndDB.Forms
                 string connectString = boxConnect.Text;
                 NpgsqlConnection conn = new NpgsqlConnection(connectString);
                 conn.Open();
-                ConnectionSettingsManager.SetUserConnections(connectString,connectString);
+                ConnectionSettingsManager.SetUserConnections(connectString, connectString);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -39,6 +40,11 @@ namespace PracticeFilesAndDB.Forms
             {
                 MessageBox.Show("Стороняя ошибка: " + ex.ToString());
             }
+        }
+
+        private void AuthDb_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
